@@ -1,28 +1,52 @@
 import React from 'react';
 import logo from './logo.svg';
+import Input from './Components/input';
+import Button from './Components/button';
+import List from './Components/ul';
 import './App.css';
 
-function App() {
-  return (
-  <div>
-    <h1>TO-DO LIST</h1>
-    <ul>
-    {
-      a()
-    }
-    </ul>
-  </div>
-  );
-}
-
-function a()
+class App extends React.Component
 {
-  var arr=[];
-  for(var i=0;i<10;i++)
+  state={ 
+      value : "",
+      todo : [],
+  };
+
+  saveTodo = ()=>
   {
-    arr.push(<li> {i} </li>)
+    const {value,todo} = this.state;
+    todo.push(value);
+    this.setState({todo : todo,value : ""})
   }
-  return arr;
+
+  handleInput = (e)=>
+  {
+    const val = e.target.value;
+    this.setState({value : val})
+  }
+
+  deleteItem = (i)=>
+  {
+    return () =>
+    {
+        const {todo} = this.state;
+        console.log(i)
+        todo.splice(i,1);
+        this.setState({todo : todo})
+    }
+  }
+
+  render()
+  {
+    const {value,todo} = this.state;
+    return (
+      <div>
+        <Input data={value} change={this.handleInput} />
+        <Button click={this.saveTodo} />
+        <List todo={todo} deleteItem={this.deleteItem} />
+      </div>
+    )
+  }
 }
 
 
