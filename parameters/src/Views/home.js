@@ -1,8 +1,7 @@
 import React from 'react';
 
-export default function(props)
+export default function()
 {
-	console.log(props)
 	// setTimeout(
 	// 	function() {
 	// 		props.history.push("/about");

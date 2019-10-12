@@ -8,8 +8,7 @@ export default function(props)
 		<Navbar bg="primary" vaiant="dark">
 		<Nav className="mr-auto">
 			<Link to="/"><button>Home</button></Link>
-			<Link to="/about"><button>About</button></Link>
-			<Link to="/todo"><button>To-Do</button></Link>
+			<Link to="/user"><button>Users</button></Link>
 		</Nav>
 		</Navbar>
 	)
