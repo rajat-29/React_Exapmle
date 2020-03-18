@@ -4,6 +4,7 @@ import './App.css';
 import Counter from './components/Counter';
 import Greet from './components/Greet';
 import FunctionClick from './components/FunctionClick';
+import EventBind from './components/EventBind';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Counter />
       <Greet name="Rajat" />
       <FunctionClick />
+      <EventBind />
     </div>
   );
 }
